@@ -1,0 +1,16 @@
+{
+  "type": "module",
+  "name": "vanilla-js-carousel",
+  "version": "1.0.0",
+  "description": "A vanillaJS carousel",
+  "packageManager": "yarn@3.6.3",
+  "main": "app.js",
+  "directories": {
+    "src": "src"
+  },
+  "scripts": {
+    "start": "node ./app.js"
+  },
+  "author": "Giovanna Izzo",
+  "license": "ISC"
+}
