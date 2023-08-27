@@ -6,7 +6,7 @@
   "packageManager": "yarn@3.6.3",
   "main": "app.js",
   "directories": {
-    "src": "src"
+    "components": "components"
   },
   "scripts": {
     "start": "node ./app.js"

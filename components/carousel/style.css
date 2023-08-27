@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+* { box-sizing: border-box; }
+
+body {
+  height: 100%;
+  background-color: #7656d6;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  letter-spacing: 0.15em;
+  font-size: 22px;
+}
+
+.slider {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  height: 300px;
+  box-shadow: 3px 3px 10px rgba(0,0,0,.2);
+}
+
+.wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 300px;
+  z-index: 1;
+}
+
+.slides {
+  display: flex;
+  position: relative;
+  top: 0;
+  left: -90vw;
+  width: 10000px;
+}
+
+.slides.shifting {
+  transition: left .2s ease-out;
+}
+
+.slide {
+  width: 90vw;
+  height: 300px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 1s;
+  position: relative;
+  background: #FFCF47;
+  border-radius: 2px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.slider.loaded {
+  .slide:nth-child(2),
+  .slide:nth-child(7) { background-image: url('https://images.unsplash.com/photo-1693129429390-74d619c3da60?crop=entropy\u0026cs=srgb\u0026fm=jpg\u0026ixid=M3wxMjA3fDB8MXx0b3BpY3x8eEh4WVRNSExnT2N8fHx8fDJ8fDE2OTMxNDIzNjd8\u0026ixlib=rb-4.0.3\u0026q=85') }
+  .slide:nth-child(1),
+  .slide:nth-child(6) { background-image: url('https://images.unsplash.com/photo-1693074467489-cc2badba072a?crop=entropy\u0026cs=srgb\u0026fm=jpg\u0026ixid=M3wxMjA3fDB8MXx0b3BpY3x8eEh4WVRNSExnT2N8fHx8fDJ8fDE2OTMxNDIzNjd8\u0026ixlib=rb-4.0.3\u0026q=85') }
+  .slide:nth-child(3) { background-image: url('https://images.unsplash.com/photo-1692909718694-7d92114e33e6?crop=entropy\u0026cs=srgb\u0026fm=jpg\u0026ixid=M3wxMjA3fDB8MXx0b3BpY3x8eEh4WVRNSExnT2N8fHx8fDJ8fDE2OTMxNDIzNjd8\u0026ixlib=rb-4.0.3\u0026q=85') }
+  .slide:nth-child(4) { background-image: url('https://images.unsplash.com/photo-1692910576432-b55f8f6f1e62?crop=entropy\u0026cs=srgb\u0026fm=jpg\u0026ixid=M3wxMjA3fDB8MXx0b3BpY3x8eEh4WVRNSExnT2N8fHx8fDJ8fDE2OTMxNDIzNjd8\u0026ixlib=rb-4.0.3\u0026q=85') }
+  .slide:nth-child(5) { background-image: url('https://images.unsplash.com/photo-1692780237521-07da67503750?crop=entropy\u0026cs=srgb\u0026fm=jpg\u0026ixid=M3wxMjA3fDB8MXx0b3BpY3x8eEh4WVRNSExnT2N8fHx8fDJ8fDE2OTMxNDIzNjd8\u0026ixlib=rb-4.0.3\u0026q=85') }
+}
+
+.control {
+  position: absolute;
+  top: 50%;
+  width: 48px;
+  height: 48px;
+  margin-top: -20px;
+  z-index: 2;
+}
+
+.prev,
+.next {
+  background-size: 48px;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  filter: invert(1)
+}
+
+.prev {
+  background-image: url(https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronLeft-512.png);
+  left: 0;
+}
+
+.next {
+  background-image: url(https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronRight-512.png);
+  right: 0;
+}
+
+.prev:active,
+.next:active {
+  transform: scale(.8);
+}
+
+#dots {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 0.75em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.dot {
+    background: #555;
+    border-radius: 0.75em;
+    cursor: pointer;
+    display: inline-block;
+    height: 0.75em;
+    margin: 0 0.75em;
+    width: 0.75em;
+}
+
+.dot.active {
+  background: #fff;
+    box-shadow: 0 0 3px 3px #ddd;
+}
